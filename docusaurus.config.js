@@ -20,6 +20,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          // disableVersioning:  true,
+          includeCurrentVersion: false,
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
@@ -48,10 +50,17 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         },
         items: [
           {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            dropdownActiveClassDisabled: false,
+          },
+          {
             type: 'doc',
             docId: 'intro',
             position: 'left',
             label: 'Docs',
+            includeCurrentVersion: false,
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
